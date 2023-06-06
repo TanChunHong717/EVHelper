@@ -14,10 +14,6 @@ body_style = st.sidebar.multiselect("Choose Body Style:", df["Body Style"].drop_
 if body_style:
     df = df[df["Body Style"].isin(body_style)]
 
-segment = st.sidebar.multiselect("Choose Body Segment:", df["Segment"].drop_duplicates().sort_values())
-if segment:
-    df = df[df["Segment"].isin(segment)]
-
 seat_range = st.sidebar.slider("Number of Seat", min_value=1, max_value=10, value=(1, 10), step=1)
 st.sidebar.write(f"Selected Number of Seat: {seat_range[0]} - {seat_range[1]}")
 
